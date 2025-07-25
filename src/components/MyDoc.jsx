@@ -6,17 +6,20 @@ const styles = StyleSheet.create({
   page: {
     flexDirection: "col",
     backgroundColor: "#ffffff",
+    padding: 30,
   },
   row: {
     flexDirection: "row",
-    border: "1",
   },
   col: {
     flexDirection: "col",
-    margin: 10,
     padding: 10,
     flexGrow: 1,
     border: "1",
+  },
+  heading: {
+    fontSize: "20",
+    fontWeight: "30",
   },
 });
 const str = "asdfasdf";
@@ -29,12 +32,12 @@ const MyDocument = () => (
        * header row
        *
        */}
-      <View style={styles.row}>
-        <View style={styles.col}>
+      <View style={{ ...styles.row, ...styles.heading }}>
+        <View style={{ ...styles.col, width: "80%" }}>
           <Text>[Company Name]</Text>
         </View>
         <View style={styles.col}>
-          <Text>INVOICE</Text>
+          <Text style={{ marginLeft: "auto", color: "#a3a3a3" }}>INVOICE</Text>
         </View>
       </View>
       {/**
@@ -139,7 +142,6 @@ const MyDocument = () => (
        * Footer row
        *
        */}
-      <View></View>
     </Page>
   </Document>
 );
