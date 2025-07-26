@@ -15,11 +15,11 @@ const styles = StyleSheet.create({
     flexDirection: "col",
     padding: 10,
     flexGrow: 1,
-    border: "1",
+    border: "0",
   },
   heading: {
     fontSize: "20",
-    fontWeight: "30",
+    fontWeight: "bold",
   },
 });
 const str = "asdfasdf";
@@ -46,26 +46,82 @@ const MyDocument = () => (
        *
        */}
       <View style={styles.row}>
-        <View style={styles.col}>
-          <Text>[Stree ADDRESS]</Text>
-          <Text>[city. country. post.]</Text>
-          <Text>[phone]</Text>
+        <View
+          style={{
+            ...styles.col,
+            width: "60%",
+            fontSize: "12",
+            paddingTop: "0",
+          }}
+        >
+          <Text style={{ paddingBottom: "3" }}>[Stree Address]</Text>
+          <Text style={{ paddingBottom: "3" }}>[city. country. post.]</Text>
+          <Text style={{ paddingBottom: "3" }}>[phone]</Text>
         </View>
-        <View style={{ ...styles.col, border: "3" }}>
-          <View style={{ ...styles.row, backgroundColor: "#bababa" }}>
-            <View style={styles.col}>
-              <Text>[INVOICE #]</Text>
+        {/**
+         *
+         * ivoice details table
+         *
+         */}
+        <View style={{ ...styles.col, border: "0", width: "50%" }}>
+          <View
+            style={{
+              ...styles.row,
+              backgroundColor: "#bababa",
+              fontWeight: "bold",
+              fontSize: "14",
+            }}
+          >
+            <View
+              style={{
+                ...styles.col,
+                width: "50%",
+                border: "1",
+                paddingTop: "3",
+                paddingBottom: "3",
+              }}
+            >
+              <Text style={{ textAlign: "center" }}>INVOICE #</Text>
             </View>
-            <View style={styles.col}>
-              <Text>[Date]</Text>
+            <View
+              style={{
+                ...styles.col,
+                width: "50%",
+                border: "1",
+                paddingTop: "3",
+                paddingBottom: "3",
+              }}
+            >
+              <Text style={{ textAlign: "center" }}>DATE</Text>
             </View>
           </View>
-          <View style={styles.row}>
-            <View style={styles.col}>
-              <Text>[INV123]</Text>
+          <View
+            style={{
+              ...styles.row,
+              fontSize: "12",
+            }}
+          >
+            <View
+              style={{
+                ...styles.col,
+                width: "50%",
+                border: "1",
+                paddingTop: "3",
+                paddingBottom: "3",
+              }}
+            >
+              <Text style={{ textAlign: "center" }}>[INV123]</Text>
             </View>
-            <View style={styles.col}>
-              <Text>[31/05/2001]</Text>
+            <View
+              style={{
+                ...styles.col,
+                width: "50%",
+                border: "1",
+                paddingTop: "3",
+                paddingBottom: "3",
+              }}
+            >
+              <Text style={{ textAlign: "center" }}>[31/05/2001]</Text>
             </View>
           </View>
         </View>
@@ -75,14 +131,33 @@ const MyDocument = () => (
        * Bill To Row
        *
        */}
-      <View style={styles.row}>
-        <View style={styles.col}>
-          <Text>BILL TO</Text>
-          <Text>[Client Name]</Text>
-          <Text>[Email]</Text>
-          <Text>[Street Address]</Text>
-          <Text>[city . country . po]</Text>
-          <Text>[Phone Number]</Text>
+      <View style={{ ...styles.row, marginTop: 50 }}>
+        <View
+          style={{
+            ...styles.col,
+            fontSize: "12",
+          }}
+        >
+          <View
+            style={{
+              ...styles.row,
+              backgroundColor: "#bababa",
+              fontWeight: "bold",
+              fontSize: "14",
+              width: "50%",
+              border: "1",
+              padding: 6,
+              paddingTop: 3,
+              paddingBottom: 3,
+            }}
+          >
+            <Text>BILL TO</Text>
+          </View>
+          <Text style={{ paddingBottom: "3" }}>[Client Name]</Text>
+          <Text style={{ paddingBottom: "3" }}>[Email]</Text>
+          <Text style={{ paddingBottom: "3" }}>[Street Address]</Text>
+          <Text style={{ paddingBottom: "3" }}>[city . country . po]</Text>
+          <Text style={{ paddingBottom: "3" }}>[Phone Number]</Text>
         </View>
       </View>
       {/**
@@ -90,37 +165,139 @@ const MyDocument = () => (
        * Item Details Row
        *
        */}
-      <View style={styles.row}>
-        <View style={styles.col}>
-          <Text>ITEMS</Text>
+      <View
+        style={{
+          ...styles.row,
+          marginTop: 50,
+          fontWeight: "bold",
+          fontSize: "14",
+          paddingHorizontal: "10",
+        }}
+      >
+        <View
+          style={{
+            ...styles.col,
+            border: "1",
+            backgroundColor: "#bababa",
+            width: "70%",
+          }}
+        >
+          <Text>DESCRIPTION</Text>
         </View>
-        <View style={styles.col}>
-          <Text>AMOUNT</Text>
+        <View
+          style={{
+            ...styles.col,
+            border: "1",
+            backgroundColor: "#bababa",
+            width: "30%",
+          }}
+        >
+          <Text style={{ textAlign: "center" }}>AMOUNT</Text>
         </View>
       </View>
-      <View style={styles.row}>
-        <View style={styles.col}>
-          <Text>service fee</Text>
+      {/**
+       *
+       * Items
+       *
+       */}
+      <View
+        style={{
+          ...styles.row,
+          fontSize: "12",
+          paddingHorizontal: "10",
+        }}
+      >
+        <View
+          style={{
+            ...styles.col,
+            borderLeft: "1",
+            width: "70%",
+            paddingTop: "3",
+            paddingBottom: "3",
+          }}
+        >
+          <Text>Items</Text>
         </View>
-        <View style={styles.col}>
-          <Text>200</Text>
+        <View
+          style={{
+            ...styles.col,
+            borderLeft: "1",
+            borderRight: "1",
+            width: "30%",
+            paddingTop: "3",
+            paddingBottom: "3",
+          }}
+        >
+          <Text style={{ textAlign: "right" }}>AMOUNT</Text>
         </View>
       </View>
-      <View style={styles.row}>
-        <View style={styles.col}>
-          <Text>service fee</Text>
+
+      <View
+        style={{
+          ...styles.row,
+          fontSize: "12",
+          paddingHorizontal: "10",
+        }}
+      >
+        <View
+          style={{
+            ...styles.col,
+            borderLeft: "1",
+            width: "70%",
+            paddingTop: "3",
+            paddingBottom: "3",
+          }}
+        >
+          <Text>Items</Text>
         </View>
-        <View style={styles.col}>
-          <Text>200</Text>
+        <View
+          style={{
+            ...styles.col,
+            borderLeft: "1",
+            borderRight: "1",
+            width: "30%",
+            paddingTop: "3",
+            paddingBottom: "3",
+          }}
+        >
+          <Text style={{ textAlign: "right" }}>AMOUNT</Text>
         </View>
       </View>
-      <View style={styles.row}>
-        <View style={styles.col}>
-          <Text>Thank You for you Business!</Text>
+
+      {/**
+       *
+       * Total ROW
+       *
+       */}
+      <View
+        style={{
+          ...styles.row,
+          fontSize: "12",
+          paddingHorizontal: "10",
+        }}
+      >
+        <View
+          style={{
+            ...styles.col,
+            border: "1",
+            width: "60%",
+          }}
+        >
+          <Text style={{ textAlign: "center", fontStyle: "italic" }}>
+            Thank You for you Business!
+          </Text>
         </View>
-        <View style={styles.row}>
-          <Text>TOTAL </Text>
-          <Text>400 </Text>
+        <View
+          style={{
+            ...styles.col,
+            border: "1",
+            width: "40%",
+          }}
+        >
+          <View style={{ ...styles.row, fontSize: "14", fontWeight: "bold" }}>
+            <Text>TOTAL </Text>
+            <Text> Rs.400</Text>
+          </View>
         </View>
       </View>
 
@@ -129,8 +306,15 @@ const MyDocument = () => (
        * Contact Details Row
        *
        */}
-      <View style={styles.row}>
-        <View style={styles.col}>
+      <View style={{ ...styles.row, marginVertical: "auto" }}>
+        <View
+          style={{
+            ...styles.col,
+            textAlign: "center",
+            fontStyle: "italic",
+            fontSize: "12",
+          }}
+        >
           <Text>
             If you have any questions about this invoice, please contact
           </Text>
