@@ -9,6 +9,9 @@ import MyDocument from "./components/MyDocument";
 
 function App() {
   const [formData, setFormData] = useState(formDataObj);
+  const [showPreview, setShowPreview] = useState(false); //to toggle preview on and off
+
+  //function to calculate the total amount of all items
   const calcAmount = () => {
     const amt = formData.items.reduce(
       (total, p) => total + Number(p.price) * Number(p.quantity),
@@ -17,22 +20,30 @@ function App() {
     setFormData({ ...formData, amount: amt });
   };
 
+  //this will execute only when items are added or removed from the array
   useEffect(() => {
     calcAmount();
   }, [formData.items]);
 
-  //const [instance, updateInstance] = usePDF({ MyDocument });
-  //console.log(formData);
+  //this useEffect is to switch back to html preview of invoice while editing
+  useEffect(() => {
+    setShowPreview(false);
+  }, [formData]);
+
   return (
     <>
       <FormDataContext.Provider value={{ ...formData }}>
-        <Header setFormData={setFormData} />
+        <Header
+          setFormData={setFormData}
+          setShowPreview={setShowPreview}
+          showPreview={showPreview}
+        />
         <div className="app-container my-10 md:my-1 md:flex md:justify-between ">
           <div className="left-pane  md:w-6/12 overflow-auto md:h-[90vh] scrollbar scrollbar-thumb-blue-900 scrollbar-track-blue-100 text-center ">
             <InvoiceForm formData={formData} setFormData={setFormData} />
           </div>
-          <div className="right-pane my-10 md:my-0 md:w-6/12 text-center">
-            <PreviewPane />
+          <div className="right-pane  my-10 md:my-0 md:w-6/12 text-center">
+            <PreviewPane showPreview={showPreview} />
           </div>
         </div>
       </FormDataContext.Provider>

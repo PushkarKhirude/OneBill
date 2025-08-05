@@ -8,6 +8,7 @@ const formDataObj = {
     city: "",
     postCode: "",
     country: "",
+    phoneNumber: "",
   },
   billTo: {
     clientName: "",
