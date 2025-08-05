@@ -7,7 +7,7 @@ const InvoiceForm = ({ formData, setFormData }) => {
     return {
       itemName: "",
       quantity: "",
-      price: 0,
+      price: null,
     };
   });
 
@@ -35,6 +35,18 @@ const InvoiceForm = ({ formData, setFormData }) => {
       {/**
        * these are fields for invoice creator's address
        * */}
+      <input
+        type="text"
+        placeholder="Street Address"
+        value={formData.billFrom.streetAddress}
+        onChange={(e) =>
+          setFormData({
+            ...formData,
+            billFrom: { ...formData.billFrom, streetAddress: e.target.value },
+          })
+        }
+        className="border rounded-lg p-2 text-center w-full bg-blue-50 focus:bg-white my-3"
+      />
       <div className="address-container  my-3 flex justify-between">
         <input
           type="text"
@@ -73,6 +85,18 @@ const InvoiceForm = ({ formData, setFormData }) => {
           className="border w-[30%] text-center rounded-lg p-2 bg-blue-50 focus:bg-white"
         />
       </div>
+      <input
+        type="tel"
+        placeholder="Phone Number"
+        value={formData.billFrom.phoneNumber}
+        onChange={(e) =>
+          setFormData({
+            ...formData,
+            billFrom: { ...formData.billFrom, phoneNumber: e.target.value },
+          })
+        }
+        className="border rounded-lg text-center p-2 w-full my-2 bg-blue-50 focus:bg-white"
+      />
       <input
         type="date"
         value={formData.invoiceDate}
@@ -237,19 +261,19 @@ const InvoiceForm = ({ formData, setFormData }) => {
           Add Item ╋
         </button>
       </form>
-      <div className="Item-list">
+      <div className="Item-list  pt-1">
         {formData.items.map((item, index) => {
           return (
             <div
               key={index}
-              className=" rounded-lg text-center my-2 flex justify-between"
+              className=" rounded-lg text-center my-2 flex justify-between "
             >
-              <p className="p-2 w-8/12 border rounded-lg mr-3 flex justify-between">
-                <span className="mx-3">{item.itemName}</span>
-                <span className="mx-3">Qty: {item.quantity}</span>
+              <p className="p-2 w-10/12 border rounded-lg wrap-anywhere text-left  flex justify-between bg-sky-100 ">
+                <div className="mx-3">{item.itemName}</div>
+                <div className="mx-3">Qty: {item.quantity}</div>
               </p>
               <button
-                className="border rounded-md hover:bg-red-500 cursor-pointer flex justify-center"
+                className="border rounded-md hover:bg-red-400 cursor-pointer flex justify-center bg-sky-100 shadow-2xl shadow-blue-100"
                 onClick={(e) =>
                   setFormData({
                     ...formData,
@@ -266,6 +290,7 @@ const InvoiceForm = ({ formData, setFormData }) => {
             </div>
           );
         })}
+        <div className="md:my-100"></div>
       </div>
     </div>
   );

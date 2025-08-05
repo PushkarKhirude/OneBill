@@ -2,7 +2,7 @@ import React from "react";
 
 function PreviewPage({ data }) {
   return (
-    <div className="page border overflow-auto my-2 mx-auto px-5 2xl:px-10 2xl:w-[750px] w-[390px] ">
+    <div className="page border overflow-auto my-2 mx-auto px-5 2xl:px-10 2xl:w-[750px] w-[390px] wrap-anywhere">
       <div className="header-row justify-between flex text-[16px] 2xl:text-[30px] mb-1">
         <span className="font-bold w-[80%] text-left  mt-5 2xl:mt-10">
           {data.billFrom.companyName || "[Company Name]"}
@@ -13,11 +13,11 @@ function PreviewPage({ data }) {
       </div>
       <div className="header-details-row justify-between flex ">
         <div className="company-details  w-[60%] text-left text-[10px] 2xl:text-[16px]">
-          <div>[Street Address]</div>
+          <div>{`${data.billFrom.streetAddress || "[Street Address]"}`}</div>
           <div>{`${data.billFrom.city || "City"}, ${
             data.billFrom.country || "Country"
           }, ${data.billFrom.postCode || "PO"}`}</div>
-          <div>Phone Number</div>
+          <div>{`${data.billFrom.phoneNumber || "[Phone Number]"}`}</div>
         </div>
         <div className="invoice-details  pt-2 w-[40%]">
           <div className="text-[12px] font-semibold text-center flex justify-center 2xl:text-[18px]">
