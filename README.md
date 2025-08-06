@@ -2,7 +2,6 @@
 
 A simple and responsive Invoice PDF generator built with **React.js** and **Tailwind CSS**, using the `@react-pdf/renderer` library. Instantly see your invoice updates live in PDF format as you fill out the form — smooth, real-time, and hassle-free.
 
-````markdown
 [![React](https://img.shields.io/badge/React-20232a?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![PDF Powered](https://img.shields.io/badge/PDF-react--pdf--renderer-blue?style=for-the-badge)](https://react-pdf.org/)
@@ -15,8 +14,6 @@ A simple and responsive Invoice PDF generator built with **React.js** and **Tail
 🚀 Live Demo: [OneBill](onebill.pushkarkhirude.com)
 No sign-up needed. Just fill in your invoice details and watch the PDF update in real time!
 
----
-
 ## 🚀 Features
 
 - 📝 Custom invoice form with real-time data entry
@@ -26,15 +23,11 @@ No sign-up needed. Just fill in your invoice details and watch the PDF update in
 - 💾 Download the generated invoice as a PDF
 - ⚡ Fast, lightweight, and mobile-friendly UI
 
----
-
 ## 🛠️ Tech Stack
 
 - **Frontend**: React.js
 - **Styling**: Tailwind CSS
 - **PDF Rendering**: `@react-pdf/renderer`
-
----
 
 ## 📸 Screenshots
 
@@ -48,8 +41,6 @@ No sign-up needed. Just fill in your invoice details and watch the PDF update in
 
 ![Click on clear all to instantly reset the invoice and start from scratch](screenshots/ClearAll.gif)
 
----
-
 ## ✨ Future Improvements
 
 Here are some ideas on the roadmap — and maybe more to come:
@@ -62,8 +53,6 @@ Here are some ideas on the roadmap — and maybe more to come:
 
 - 🎨 Dark Mode – For all the late-night invoice creators out there 🌙
 
----
-
 ## 🧪 How to Run Locally
 
 1. **Clone the repository**
@@ -72,7 +61,6 @@ Here are some ideas on the roadmap — and maybe more to come:
 git clone https://github.com/PushkarKhirude/OneBill.git
 cd OneBill
 ```
-````
 
 2. **Install dependencies**
 
@@ -90,21 +78,15 @@ npm run dev
 
 4. **Go to the localhost link provided in terminal**
 
----
-
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
 
 ## 🙌 Acknowledgements
 
 - Huge thanks to my friends [Onkar Chavan](https://github.com/Onkar755), [Nikita Bhaise](https://github.com/Nikita-Bhaise) for their feedback and suggestions that helped refine this app.
 - [react-pdf/renderer](https://react-pdf.org/) for powering the PDF magic.
 - Tailwind CSS for making UI styling fast and fun.
-
----
 
 ## 📬 Contact
 
