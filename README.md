@@ -31,14 +31,19 @@ No sign-up needed. Just fill in your invoice details and watch the PDF update in
 
 ## 📸 Screenshots
 
+Responsive UI
 ![Responsive UI](screenshots/ResponsiveUI.gif)
 
+Live updates in invoice PDF
 ![Live updates in invoice PDF](screenshots/LiveUpdates.gif)
 
+Add and delete items from invoice
 ![Add and delete items from invoice](screenshots/AddingRemovingItems.gif)
 
+Quick and easy downloads
 ![Quick and easy downloads](screenshots/EasyDownload.gif)
 
+Click on clear all to instantly reset the invoice and start from scratch
 ![Click on clear all to instantly reset the invoice and start from scratch](screenshots/ClearAll.gif)
 
 ## ✨ Future Improvements
