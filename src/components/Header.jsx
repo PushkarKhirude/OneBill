@@ -25,7 +25,7 @@ const Header = ({ setFormData, setShowPreview, showPreview }) => {
   const previewBg = showPreview ? "bg-amber-200" : "bg-blue-200";
 
   return (
-    <div className="header  flex justify-between border-b bg-blue-50 border-blue-800">
+    <div className="header  flex justify-between border-b bg-blue-50 border-blue-800 sticky top-0 z-30 ">
       <button
         className="border hover:shadow-xl p-2 rounded-lg font-bold mx-auto my-5 cursor-pointer hover:bg-red-300 active:bg-red-500 bg-blue-200"
         onClick={() => setFormData(formDataObj)}
